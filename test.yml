@@ -1,0 +1,11 @@
+---
+ - name: print Hello World
+   hosts: localhost
+   ignore_errors: true
+   tasks:
+     - name: ping check
+       ping: 
+       register: ping_check
+       
+     - debug: 
+          msg: "{{ping_check}}"
